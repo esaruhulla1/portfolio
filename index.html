@@ -1,0 +1,1784 @@
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Esaruhulla -Developer</title>
+    <!-- <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/GfZmHXpK/My-favicon-big-Photoroom.png"> -->
+    <link rel="icon" type="image/x-icon" href="/assets/My_favicon.png">
+    <!-- <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/jkQRfBHw/My-Img-Transparent.png"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2ecc71", // Green from "Hello There" badge
+                        secondary: "#2c3e50", // Dark blue/grey text color
+                        "background-light": "#ffffff",
+                        "background-dark": "#111827",
+                        "text-light": "#374151",
+                        "text-dark": "#e5e7eb",
+                        "nav-text": "#1f2937",
+                        "accent-purple": "#a855f7", // For the What I Do section button/accents
+                    },
+                    fontFamily: {
+                        display: ["Quicksand", "Poppins", "sans-serif"],
+                        sans: ["Poppins", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                    animation: {
+                        'infinite-scroll': 'infinite-scroll 80s linear infinite', // Slower speed
+                    },
+                    keyframes: {
+                        'infinite-scroll': {
+                            from: { transform: 'translateX(0)' },
+                            to: { transform: 'translateX(-100%)' },
+                        }
+                    }
+                },
+            },
+        };
+    </script>
+    <style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display antialiased transition-colors duration-300">
+    <nav
+        class="fixed w-full z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-sm border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <a class="text-2xl font-bold text-secondary dark:text-white tracking-tight" href="#">
+                        <span">&lt;/&gt;</span> Esa
+                    </a>
+                </div>
+                <!-- <div class="flex-shrink-0 flex items-center">
+                    <a class="text-2xl font-bold text-secondary dark:text-white tracking-tight" href="#">Nick Berg</a>
+                </div> -->
+                <div class="hidden md:flex space-x-8">
+                    <a class="text-nav-text dark:text-gray-300 hover:text-primary dark:hover:text-primary px-1 py-2 text-sm font-medium transition-colors"
+                        href="#">Home</a>
+                    <a class="text-nav-text dark:text-gray-300 hover:text-primary dark:hover:text-primary px-1 py-2 text-sm font-medium transition-colors"
+                        href="#about">About</a>
+                    <a class="text-nav-text dark:text-gray-300 hover:text-primary dark:hover:text-primary px-1 py-2 text-sm font-medium transition-colors"
+                        href="#education-experience">Experiences</a>
+                    <a class="text-nav-text dark:text-gray-300 hover:text-primary dark:hover:text-primary px-1 py-2 text-sm font-medium transition-colors"
+                        href="#skills">Skills</a>
+
+                    <a class="text-nav-text dark:text-gray-300 hover:text-primary dark:hover:text-primary px-1 py-2 text-sm font-medium transition-colors"
+                        href="#portfolio">Project</a>
+                    <a class="text-nav-text dark:text-gray-300 hover:text-primary dark:hover:text-primary px-1 py-2 text-sm font-medium transition-colors"
+                        href="#gallery">Gallery</a>
+                    <a class="text-nav-text dark:text-gray-300 hover:text-primary dark:hover:text-primary px-1 py-2 text-sm font-medium transition-colors"
+                        href="#gallery">Blog</a>
+                    <a class="text-nav-text dark:text-gray-300 hover:text-primary dark:hover:text-primary px-1 py-2 text-sm font-medium transition-colors"
+                        href="#contact">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-500 dark:text-gray-300 hover:text-primary focus:outline-none"
+                        type="button">
+                        <span class="material-icons text-3xl">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-16 overflow-hidden">
+
+        <!-- Banner -->
+        <section class="min-h-[calc(100vh-5rem)] flex items-center relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 w-full h-full flex flex-col md:flex-row items-center ">
+                <div class="w-full md:w-1/2 mt-12 md:mt-0 md:pl-8 text-center md:text-left"
+                    style="font-family: Quicksand">
+                    <div
+                        class="inline-block bg-primary text-white text-sm font-semibold py-2 px-6 rounded-t-2xl rounded-br-2xl mb-6 shadow-md transform hover:scale-105 transition-transform duration-300">
+                        Hello There!
+                    </div>
+                    <h1 class="text-4xl md:text-6xl font-bold text-secondary dark:text-white mb-2 leading-tight">
+                        I'M <span class="text-secondary dark:text-white">Esaruhulla</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl font-medium text-secondary/80 dark:text-gray-300 mb-8">
+                        Full Stack Web Developer
+                    </h2>
+                    <div class="space-y-4 mb-10 max-w-md mx-auto md:mx-0">
+                        <div class="flex items-center justify-center md:justify-start group">
+                            <span
+                                class="material-icons text-secondary dark:text-gray-400 mr-3 text-xl group-hover:text-primary transition-colors">location_on</span>
+                            <span class="text-text-light dark:text-gray-400 font-light">Mirpur 10, Dhaka, Bangladesh
+                                1216/1000</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start group">
+                            <span
+                                class="material-icons text-secondary dark:text-gray-400 mr-3 text-xl group-hover:text-primary transition-colors">call</span>
+                            <span class="text-text-light dark:text-gray-400 font-light">01973 - 82 60 02</span>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start group">
+                            <span
+                                class="material-icons text-secondary dark:text-gray-400 mr-3 text-xl group-hover:text-primary transition-colors">email</span>
+                            <a class="text-text-light dark:text-gray-400 font-light hover:text-primary dark:hover:text-primary transition-colors"
+                                href="mailto:yourmail@mail.com">esaruhulla01@gmail.com</a>
+                        </div>
+                        <div class="flex items-center justify-center md:justify-start group">
+                            <span
+                                class="material-icons text-secondary dark:text-gray-400 mr-3 text-xl group-hover:text-primary transition-colors">language</span>
+                            <a class="text-text-light dark:text-gray-400 font-light hover:text-primary dark:hover:text-primary transition-colors"
+                                href="http://example.net"> https://www.linkedin.com/in/esaruhulla</a>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4 justify-center md:justify-start">
+                        <a class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-secondary dark:text-gray-300 hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:border-primary transition-all duration-300"
+                            href="https://www.facebook.com/fbesasagor">
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </a>
+                        <a class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-secondary dark:text-gray-300 hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:border-primary transition-all duration-300"
+                            href=" https://www.linkedin.com/in/esaruhulla">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-secondary dark:text-gray-300 hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:border-primary transition-all duration-300"
+                            href="https://github.com/esaruhulla1">
+                            <i class="fab fa-github text-sm"></i>
+                        </a>
+
+                        <a class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-secondary dark:text-gray-300 hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:border-primary transition-all duration-300"
+                            href="#">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-secondary dark:text-gray-300 hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:border-primary transition-all duration-300"
+                            href="https://www.instagram.com/esasagor?igsh=MW5obmNuanR4aXNsag==">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center md:justify-end md:pr-12 relative mt-10 md:mt-0 ">
+                    <div
+                        class="absolute bottom-0 left-100 w-72 h-72 bg-blue-200 dark:bg-blue-900/20 rounded-full blur-3xl -z-10">
+                    </div>
+                    <div
+                        class=" relative z-10 w-[300px] h-[300px] md:w-[480px] md:h-[480px] rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl flex items-end justify-center bg-gray-100 dark:bg-gray-800">
+                        <img alt="James Ryan Portrait holding a laptop"
+                            class="w-[90%] h-[90%] object-cover object-top transform scale-110 translate-y-2 mb-5"
+                            src="https://i.ibb.co.com/jkQRfBHw/My-Img-Transparent.png" />
+                    </div>
+                </div>
+                <!-- <div
+                    class="relative z-10 w-[300px] h-[300px] md:w-[480px] md:h-[480px] rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl flex items-end justify-center bg-gray-100 dark:bg-gray-800">
+                    <img alt="James Ryan Portrait holding a laptop"
+                        class="w-[90%] h-[90%] object-cover object-top transform scale-110 translate-y-2"
+                        src="https://i.ibb.co.com/jkQRfBHw/My-Img-Transparent.png" />
+                </div> -->
+            </div>
+        </section>
+
+        <!-- about me -->
+        <!-- <section class="py-24 relative bg-gray-50/50 dark:bg-gray-800/30" id="about">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+                <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                    <div class="w-full md:w-1/2 text-center md:text-left">
+                        <h2 class="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-6">About Me</h2>
+                        <p class="text-text-light dark:text-gray-300 text-lg leading-relaxed mb-8">
+                            I am Nick Berg from the United States. I have completed my graduation in bachelor degree.
+                            Beside this, I am trained in Web Development and love to code using HTML5, CSS3, WordPress
+                            &amp; PHP. I am also taking course about Digital Marketing. I am a person who is positive in
+                            every aspect of life.
+                        </p>
+
+                        <button
+                            class="inline-flex items-center bg-primary hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1">
+                            Download CV
+                            <span class="material-icons ml-2">download</span>
+                        </button>
+
+
+                    </div>
+                    <div class="w-full md:w-1/2 flex justify-center relative">
+                        <div
+                            class="absolute inset-0 bg-blue-100 dark:bg-blue-900/30 rounded-full blur-3xl transform scale-75 -z-10">
+                        </div>
+                        <img alt="Developer working on computer"
+                            class="relative z-10 w-full max-w-md h-auto object-contain drop-shadow-xl"
+                            src="https://i.ibb.co.com/hFL9kd7G/Portfolio-about.png" />
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <section class="py-24 relative bg-gray-50/50 dark:bg-gray-800/30 " id="about">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 w-full ">
+                <!-- <div class="text-center mb-12 lg:mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-2">About Me</h2>
+                    <span class="text-sm text-gray-500 dark:text-gray-400 font-light block">My introduction</span>
+                </div> -->
+                <div class="flex flex-col md:flex-row items-center gap-10 lg:gap-24  p-0">
+                    <div class="w-full md:w-5/12 flex justify-center md:justify-end">
+                        <div class="relative rounded-2xl overflow-hidden  w-full  ">
+                            <img alt="Developer Profile" class="w-full h-full object-cover ml-0 md:-ml-20"
+                                src="https://i.ibb.co.com/hxLx8ryD/Portfolio-about2.png" />
+                        </div>
+                    </div>
+                    <div class="w-full md:w-7/12 text-center md:text-left">
+                        <h2 class="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-6">About Me</h2>
+                        <p
+                            class="text-text-light dark:text-gray-300 text-base lg:text-lg leading-relaxed mb-8 max-w-xllll mx-auto md:mx-0">
+                            Hello, I am Esaruhulla, a passionate Full Stack Developer focused on responsive,
+                            user-friendly web applications using React.js, JavaScript, Tailwind CSS, Firebase, Node.js,
+                            Express, and MongoDB. I focus on writing clean, scalable code and creating intuitive user
+                            interfaces. I enjoy exploring new technologies, contributing to real-world projects, and
+                            continuously learning to build meaningful software.
+                        </p>
+                        <div class="flex justify-center md:justify-start gap-8 lg:gap-12 mb-10">
+                            <div class="text-center">
+                                <span
+                                    class="block text-2xl lg:text-3xl font-bold text-secondary dark:text-white mb-1">02+</span>
+                                <span
+                                    class="block text-xs lg:text-sm text-gray-500 dark:text-gray-400">Years<br />experience</span>
+                            </div>
+                            <div class="text-center">
+                                <span
+                                    class="block text-2xl lg:text-3xl font-bold text-secondary dark:text-white mb-1">30+</span>
+                                <span
+                                    class="block text-xs lg:text-sm text-gray-500 dark:text-gray-400">Completed<br />projects</span>
+                            </div>
+                            <div class="text-center">
+                                <span
+                                    class="block text-2xl lg:text-3xl font-bold text-secondary dark:text-white mb-1">2+</span>
+                                <span
+                                    class="block text-xs lg:text-sm text-gray-500 dark:text-gray-400">Companies<br />worked</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-center md:justify-start gap-5">
+                            <a href="assets/MERN_Stack_Resume_CV.pdf" download="Esaruhulla_CV.pdf"
+                                class="inline-flex items-center bg-primary hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1">
+                                Download CV
+                                <span class="material-icons ml-2">download</span>
+                            </a>
+
+
+
+                            <!-- <button
+                                class="inline-flex items-center bg-primary hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1">
+                                Download CV
+                                <span class="material-icons ml-2">download</span>
+                            </button> -->
+                            <!-- <button
+                                class="inline-flex items-center bg-primary hover:bg-green-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:-translate-y-1">
+                                Download Resume
+                                <span class="material-icons ml-2">download</span>
+                            </button> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- What i do -->
+        <section class="py-24 bg-gray-50 dark:bg-[#1f2937]/50" id="what-i-do">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-start">
+                    <div class="w-full lg:w-5/12 pt-0 lg:pt-10">
+                        <h2 class="text-4xl md:text-5xl font-bold text-secondary dark:text-white mb-8">What I do?</h2>
+                        <p class="text-text-light dark:text-gray-400 text-lg leading-relaxed mb-6">
+                            I build modern, responsive web applications with a focus on clean code, intuitive UI, and
+                            real-world usability using the MERN stack and modern frontend tools.
+                        </p>
+                        <p class="text-text-light dark:text-gray-400 text-lg leading-relaxed mb-10">
+                            I continuously learn new tools & technologies to improve performance, usability, and
+                            overall user experience.
+                        </p>
+                        <button
+                            class="inline-flex items-center bg-primary  text-white font-semibold py-3 px-8 rounded shadow-lg transition-all transform hover:-translate-y-1">
+                            Say Hello!
+                        </button>
+                    </div>
+                    <div class="w-full lg:w-7/12 flex flex-col gap-6">
+                        <div
+                            class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow relative overflow-hidden group">
+                            <div
+                                class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary group-hover:h-full transition-all duration-300">
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Frontend Development</h3>
+                            <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                I build responsive and visually appealing user interfaces using modern tools like React,
+                                JavaScript,
+                                and Tailwind CSS, ensuring smooth user experience and clean code.
+                            </p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow relative overflow-hidden group">
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Backend Development</h3>
+                            <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                Develop secure and scalable server-side applications using Node.js, Express, and
+                                MongoDB, focusing on performance, data integrity, and clean API architecture.
+                            </p>
+                        </div>
+                        <div
+                            class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow relative overflow-hidden group">
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Full Stack Development
+                            </h3>
+                            <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                I handle complete web solutions by integrating frontend and backend seamlessly,
+                                delivering
+                                fully functional applications from concept to deployment with reliable and scalable
+                                <!-- solutions. -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- My skill Progress bar -->
+        <!-- <section class="py-24 bg-white dark:bg-background-dark" id="my-skills-progress">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-4">My Skills</h2>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-y-16 gap-x-8">
+                    <div class="flex flex-col items-center group">
+                        <div class="relative w-32 h-32">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle class="text-gray-100 dark:text-gray-700" cx="50" cy="50" fill="transparent"
+                                    r="45" stroke="currentColor" stroke-width="6"></circle>
+                                <circle class="text-primary transition-all duration-1000 ease-out" cx="50" cy="50"
+                                    fill="transparent" r="45" stroke="currentColor" stroke-dasharray="283"
+                                    stroke-dashoffset="70.75" stroke-linecap="round" stroke-width="6"></circle>
+                            </svg>
+                            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                                <span class="text-2xl font-bold text-secondary dark:text-white">75%</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-medium text-secondary dark:text-white">HTML</h3>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <div class="relative w-32 h-32">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle class="text-gray-100 dark:text-gray-700" cx="50" cy="50" fill="transparent"
+                                    r="45" stroke="currentColor" stroke-width="6"></circle>
+                                <circle class="text-primary transition-all duration-1000 ease-out" cx="50" cy="50"
+                                    fill="transparent" r="45" stroke="currentColor" stroke-dasharray="283"
+                                    stroke-dashoffset="84.9" stroke-linecap="round" stroke-width="6"></circle>
+                            </svg>
+                            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                                <span class="text-2xl font-bold text-secondary dark:text-white">70%</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-medium text-secondary dark:text-white">CSS3</h3>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <div class="relative w-32 h-32">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle class="text-gray-100 dark:text-gray-700" cx="50" cy="50" fill="transparent"
+                                    r="45" stroke="currentColor" stroke-width="6"></circle>
+                                <circle class="text-primary transition-all duration-1000 ease-out" cx="50" cy="50"
+                                    fill="transparent" r="45" stroke="currentColor" stroke-dasharray="283"
+                                    stroke-dashoffset="42.45" stroke-linecap="round" stroke-width="6"></circle>
+                            </svg>
+                            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                                <span class="text-2xl font-bold text-secondary dark:text-white">85%</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-medium text-secondary dark:text-white">Bootstrap</h3>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <div class="relative w-32 h-32">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle class="text-gray-100 dark:text-gray-700" cx="50" cy="50" fill="transparent"
+                                    r="45" stroke="currentColor" stroke-width="6"></circle>
+                                <circle class="text-primary transition-all duration-1000 ease-out" cx="50" cy="50"
+                                    fill="transparent" r="45" stroke="currentColor" stroke-dasharray="283"
+                                    stroke-dashoffset="113.2" stroke-linecap="round" stroke-width="6"></circle>
+                            </svg>
+                            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                                <span class="text-2xl font-bold text-secondary dark:text-white">60%</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-medium text-secondary dark:text-white">Jquery</h3>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <div class="relative w-32 h-32">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle class="text-gray-100 dark:text-gray-700" cx="50" cy="50" fill="transparent"
+                                    r="45" stroke="currentColor" stroke-width="6"></circle>
+                                <circle class="text-primary transition-all duration-1000 ease-out" cx="50" cy="50"
+                                    fill="transparent" r="45" stroke="currentColor" stroke-dasharray="283"
+                                    stroke-dashoffset="99.05" stroke-linecap="round" stroke-width="6"></circle>
+                            </svg>
+                            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                                <span class="text-2xl font-bold text-secondary dark:text-white">65%</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-medium text-secondary dark:text-white">Javascript</h3>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <div class="relative w-32 h-32">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle class="text-gray-100 dark:text-gray-700" cx="50" cy="50" fill="transparent"
+                                    r="45" stroke="currentColor" stroke-width="6"></circle>
+                                <circle class="text-primary transition-all duration-1000 ease-out" cx="50" cy="50"
+                                    fill="transparent" r="45" stroke="currentColor" stroke-dasharray="283"
+                                    stroke-dashoffset="33.96" stroke-linecap="round" stroke-width="6"></circle>
+                            </svg>
+                            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                                <span class="text-2xl font-bold text-secondary dark:text-white">88%</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-medium text-secondary dark:text-white">Photoshop</h3>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <div class="relative w-32 h-32">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle class="text-gray-100 dark:text-gray-700" cx="50" cy="50" fill="transparent"
+                                    r="45" stroke="currentColor" stroke-width="6"></circle>
+                                <circle class="text-primary transition-all duration-1000 ease-out" cx="50" cy="50"
+                                    fill="transparent" r="45" stroke="currentColor" stroke-dasharray="283"
+                                    stroke-dashoffset="84.9" stroke-linecap="round" stroke-width="6"></circle>
+                            </svg>
+                            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                                <span class="text-2xl font-bold text-secondary dark:text-white">70%</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-medium text-secondary dark:text-white">Marketing</h3>
+                    </div>
+                    <div class="flex flex-col items-center group">
+                        <div class="relative w-32 h-32">
+                            <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+                                <circle class="text-gray-100 dark:text-gray-700" cx="50" cy="50" fill="transparent"
+                                    r="45" stroke="currentColor" stroke-width="6"></circle>
+                                <circle class="text-primary transition-all duration-1000 ease-out" cx="50" cy="50"
+                                    fill="transparent" r="45" stroke="currentColor" stroke-dasharray="283"
+                                    stroke-dashoffset="56.6" stroke-linecap="round" stroke-width="6"></circle>
+                            </svg>
+                            <div class="absolute top-0 left-0 w-full h-full flex items-center justify-center">
+                                <span class="text-2xl font-bold text-secondary dark:text-white">80%</span>
+                            </div>
+                        </div>
+                        <h3 class="mt-6 text-xl font-medium text-secondary dark:text-white">Branding</h3>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- Skill  transition-->
+        <section class="py-24 bg-white dark:bg-background-dark overflow-hidden" id="my-skills-cards">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-4">My Skills<span
+                            class="text-primary">.</span></h2>
+                </div>
+                <div
+                    class="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
+                    <div class="flex animate-infinite-scroll group hover:[animation-play-state:paused] w-max">
+                        <div class="flex gap-6 mx-3">
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-html5 text-4xl text-[#E34F26] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">HTML5</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-css3-alt text-4xl text-[#1572B6] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">CSS3</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <span
+                                    class="material-symbols-outlined text-4xl text-[#38B2AC] group-hover:scale-110 transition-transform duration-300">waves</span>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors text-center leading-tight">Tailwind
+                                    CSS</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-js text-4xl text-[#F7DF1E] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">JavaScript</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-react text-4xl text-[#61DAFB] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">React</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <span
+                                    class="material-symbols-outlined text-4xl text-black dark:text-white group-hover:scale-110 transition-transform duration-300">smart_display</span>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Next.js</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-figma text-4xl text-[#F24E1E] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Figma</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <span
+                                    class="font-bold text-2xl text-[#FF9A00] border-2 border-[#FF9A00] rounded px-1 group-hover:scale-110 transition-transform duration-300">Ai</span>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors text-center leading-tight">Adobe
+                                    Illustrator</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <span
+                                    class="material-symbols-outlined text-4xl text-[#FFCA28] group-hover:scale-110 transition-transform duration-300">local_fire_department</span>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Firebase</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fas fa-database text-4xl text-[#47A248] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">MongoDB</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-node-js text-4xl text-[#8CC84B] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Node</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-python text-4xl text-[#3776AB] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Python</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fas fa-database text-4xl text-[#003B57] dark:text-[#E8F6FF] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">SQL</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-docker text-4xl text-[#2496ED] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Docker</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <span
+                                    class="material-symbols-outlined text-4xl text-[#326CE5] group-hover:scale-110 transition-transform duration-300">anchor</span>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Kubernetes</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-aws text-4xl text-[#FF9900] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">AWS</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-google text-4xl text-[#4285F4] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Google
+                                    Cloud</span>
+                            </div>
+                        </div>
+                        <div aria-hidden="true" class="flex gap-6 mx-3">
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-html5 text-4xl text-[#E34F26] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">HTML5</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-css3-alt text-4xl text-[#1572B6] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">CSS3</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <span
+                                    class="material-symbols-outlined text-4xl text-[#38B2AC] group-hover:scale-110 transition-transform duration-300">waves</span>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors text-center leading-tight">Tailwind
+                                    CSS</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-js text-4xl text-[#F7DF1E] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">JavaScript</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-react text-4xl text-[#61DAFB] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">React</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <span
+                                    class="material-symbols-outlined text-4xl text-black dark:text-white group-hover:scale-110 transition-transform duration-300">smart_display</span>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Next.js</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-figma text-4xl text-[#F24E1E] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Figma</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <span
+                                    class="font-bold text-2xl text-[#FF9A00] border-2 border-[#FF9A00] rounded px-1 group-hover:scale-110 transition-transform duration-300">Ai</span>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors text-center leading-tight">Adobe
+                                    Illustrator</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <span
+                                    class="material-symbols-outlined text-4xl text-[#FFCA28] group-hover:scale-110 transition-transform duration-300">local_fire_department</span>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Firebase</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fas fa-database text-4xl text-[#47A248] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">MongoDB</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-node-js text-4xl text-[#8CC84B] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Node</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-python text-4xl text-[#3776AB] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Python</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fas fa-database text-4xl text-[#003B57] dark:text-[#E8F6FF] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">SQL</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-docker text-4xl text-[#2496ED] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Docker</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <span
+                                    class="material-symbols-outlined text-4xl text-[#326CE5] group-hover:scale-110 transition-transform duration-300">anchor</span>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Kubernetes</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-aws text-4xl text-[#FF9900] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">AWS</span>
+                            </div>
+                            <div
+                                class="group flex-shrink-0 w-32 h-36 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-100 dark:border-gray-700 hover:border-primary/50 dark:hover:border-primary/50 transition-all duration-300 flex flex-col items-center justify-center gap-3 p-4 cursor-default hover:shadow-lg hover:-translate-y-1">
+                                <i
+                                    class="fab fa-google text-4xl text-[#4285F4] group-hover:scale-110 transition-transform duration-300"></i>
+                                <span
+                                    class="text-sm font-semibold text-secondary dark:text-gray-200 group-hover:text-primary transition-colors">Google
+                                    Cloud</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Education and Exprience -->
+        <section class="py-24 bg-gray-50/50 dark:bg-gray-800/30" id="education-experience">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <!-- education -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-primary mb-12 uppercase tracking-wide">Education</h2>
+                        <div class="relative border-l border-gray-300 dark:border-gray-600 ml-3 md:ml-6 space-y-12">
+                            <div class="relative pl-8 md:pl-12 group">
+                                <div
+                                    class="absolute -left-[5px] top-0 w-3 h-3 bg-primary rounded-full ring-4 ring-white dark:ring-gray-800 transition-transform group-hover:scale-125">
+                                </div>
+                                <div
+                                    class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                    <span class="text-primary text-sm font-semibold mb-2 block">2021 - 2024</span>
+                                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Diploma In
+                                        Engineering
+                                    </h3>
+                                    <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                        Completed a Diploma in Engineering (Computer Engineering), gaining hands-on
+                                        technical skills and problem-solving.
+                                        and practical experience through projects and lab work.
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="relative pl-8 md:pl-12 group">
+                                <div
+                                    class="absolute -left-[5px] top-0 w-3 h-3 bg-primary rounded-full ring-4 ring-white dark:ring-gray-800 transition-transform group-hover:scale-125">
+                                </div>
+                                <div
+                                    class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                    <span class="text-primary text-sm font-semibold mb-2 block">2019 - 2020</span>
+                                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Dakhil Examination
+                                    </h3>
+                                    <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                        Successfully passed the Dakhil Examination, strengthening core academic
+                                        knowledge and analytical thinking. and critical thinking skills for higher
+                                        education.
+                                    </p>
+
+
+                                </div>
+                            </div>
+                            <div class="relative pl-8 md:pl-12 group">
+                                <div
+                                    class="absolute -left-[5px] top-0 w-3 h-3 bg-primary rounded-full ring-4 ring-white dark:ring-gray-800 transition-transform group-hover:scale-125">
+                                </div>
+                                <div
+                                    class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                    <span class="text-primary text-sm font-semibold mb-2 block">2017 - 2018</span>
+                                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Junior Dakhil
+                                        Examination</h3>
+
+
+                                    <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                        Completed the Junior Dakhil Examination, building essential knowledge
+                                        in key subjects and developing critical learning skills. This stage
+                                        prepared me for higher studies and introduced foundational problem-solving
+                                        abilities.
+                                    </p>
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- exprience -->
+                    <div>
+                        <h2 class="text-2xl font-bold text-primary mb-12 uppercase tracking-wide">Experience</h2>
+                        <div class="relative border-l border-gray-300 dark:border-gray-600 ml-3 md:ml-6 space-y-12">
+                            <div class="relative pl-8 md:pl-12 group">
+                                <div
+                                    class="absolute -left-[5px] top-0 w-3 h-3 bg-primary rounded-full ring-4 ring-white dark:ring-gray-800 transition-transform group-hover:scale-125">
+                                </div>
+                                <div
+                                    class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                    <span class="text-primary text-sm font-semibold mb-2 block">2026 - Present</span>
+                                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">MERN Stack Web
+                                        Developer
+                                    </h3>
+                                    <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                        Working as a MERN Stack Web Developer, building responsive and user-friendly web
+                                        applications. Focused on creating scalable solutions, integrating front-end and
+                                        back-end technologies.
+
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="relative pl-8 md:pl-12 group">
+                                <div
+                                    class="absolute -left-[5px] top-0 w-3 h-3 bg-primary rounded-full ring-4 ring-white dark:ring-gray-800 transition-transform group-hover:scale-125">
+                                </div>
+                                <div
+                                    class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                    <span class="text-primary text-sm font-semibold mb-2 block">2024 - 2025</span>
+                                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Frontend Developer
+                                    </h3>
+                                    <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                        Worked as a Frontend Developer on freelance platforms, designing and
+                                        implementing responsive websites. Focused on improving user experience, ensuring
+                                        cross-browser compatibility.
+                                    </p>
+
+                                </div>
+                            </div>
+                            <div class="relative pl-8 md:pl-12 group">
+                                <div
+                                    class="absolute -left-[5px] top-0 w-3 h-3 bg-primary rounded-full ring-4 ring-white dark:ring-gray-800 transition-transform group-hover:scale-125">
+                                </div>
+                                <div
+                                    class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                    <span class="text-primary text-sm font-semibold mb-2 block">2024 - 2025</span>
+
+                                    <h3 class="text-xl font-bold text-secondary dark:text-white mb-3">Deputy Assistant
+                                        Engineer</h3>
+                                    <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                        Served as Deputy Assistant Engineer at Triangle Service Ltd. managing system
+                                        operations and providing customer support.
+                                        Gained experience in problem-solving, technical troubleshooting,
+                                        and maintaining efficient workflows within the department.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Technical Skills -->
+        <section class="py-24 bg-white dark:bg-background-dark" id="skills">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-4">Technical Skills</h2>
+                    <p class="text-text-light dark:text-gray-400 text-lg">My Technical Level</p>
+                </div>
+                <div class="flex flex-col md:flex-row gap-8 justify-center items-stretch">
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-[2rem] p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-700 w-full md:max-w-xl transition-all hover:shadow-lg">
+                        <h3 class="text-xl md:text-2xl font-semibold text-center text-secondary dark:text-white mb-10">
+                            Frontend Developer</h3>
+                        <div class="grid grid-cols-2 gap-y-8 gap-x-4">
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">HTML5
+                                    </h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Expert</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">Next.JS
+                                    </h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Expert</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">
+                                        TypeScript</h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Expert</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">
+                                        Tailwind CSS</h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">
+                                        JavaScript</h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Expert</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">
+                                        React.JS</h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Expert</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-800 rounded-[2rem] p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-700 w-full md:max-w-xl transition-all hover:shadow-lg">
+                        <h3 class="text-xl md:text-2xl font-semibold text-center text-secondary dark:text-white mb-10">
+                            Backend Developer</h3>
+                        <div class="grid grid-cols-2 gap-y-8 gap-x-4">
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">Node.JS
+                                    </h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Expert</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">SQL
+                                    </h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">
+                                        Express.JS</h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Expert</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">Docker
+                                    </h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Intermediate</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">MongoDB
+                                    </h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Expert</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3">
+                                <span
+                                    class="material-symbols-outlined text-secondary dark:text-white text-xl mt-1">verified</span>
+                                <div>
+                                    <h4 class="font-medium text-secondary dark:text-white text-lg leading-tight">
+                                        Kubernetes</h4>
+                                    <span class="text-sm text-gray-400 dark:text-gray-500">Intermediate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Project -->
+        <section class="py-24 bg-gray-50/50 dark:bg-gray-800/30" id="portfolio">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-4">Featured Projects
+                    </h2>
+                    <p class="text-text-light dark:text-gray-400 text-lg">Some of my recent works</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div
+                        class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group flex flex-col">
+                        <div class="relative overflow-hidden h-32 w-full bg-gray-200 dark:bg-gray-800">
+                            <img alt="E-Commerce Dashboard"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="https://i.ibb.co.com/xqhKZKvn/Home-Shef-Project-img.png" />
+                            <div
+                                class="absolute inset-0 bg-secondary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 backdrop-blur-sm">
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://github.com/esaruhulla1/homeshef-client" title="View Code">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://home-shef-client.netlify.app" title="Live Demo">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-3 flex flex-col flex-grow border">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3
+                                    class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                                    E-Commerce Website</h3>
+                            </div>
+                            <p class="text-text-light dark:text-gray-400 text-xs mb-3 line-clamp-2">
+                                A modern online platform that connects home cooks with people looking for fresh,
+                                homemade food. Customers can explore daily menus, check a chef’s availability, place
+                                orders, make secure payments, and track their orders in real time.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">React</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">Tailwind</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">Express</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">MongoDB</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">Stripe</span>
+                                </div>
+                                <a href="https://home-shef-client.netlify.app"
+                                    class="w-full py-1.5 px-3 border border-primary/20 bg-primary/5 text-primary hover:bg-primary hover:text-white rounded-lg transition-all duration-300 text-xs font-semibold flex items-center justify-center gap-2">
+                                    View Details
+                                    <span class="material-icons text-xs">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group flex flex-col">
+                        <div class="relative overflow-hidden h-32 w-full bg-gray-200 dark:bg-gray-800">
+                            <img alt="Task Management App"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="https://i.ibb.co.com/FbJZbctw/image.png" />
+                            <div
+                                class="absolute inset-0 bg-secondary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 backdrop-blur-sm">
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://github.com/esaruhulla1/B12-A10-Habit-Tracker-client"
+                                    title="View Code">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://habit-tracker-client-by-esa.netlify.app" title="Live Demo">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-3 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3
+                                    class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                                    Habit Tracker</h3>
+                            </div>
+                            <p class="text-text-light dark:text-gray-400 text-xs mb-3 line-clamp-2">
+                                We all have goals — but building habits that stick is hard.
+                                Habit Tracker is my small attempt to make that easier.
+                                It helps you create, track, and maintain daily habits in a simple and motivating way.
+                                Whether you’re trying to wake up early, study regularly, or just drink more water — this
+                                app keeps you on track.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">React</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">Firebase</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">Express</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">MongoDB</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">Node.js</span>
+                                </div>
+                                <a href="https://habit-tracker-client-by-esa.netlify.app/"
+                                    class="w-full py-1.5 px-3 border border-primary/20 bg-primary/5 text-primary hover:bg-primary hover:text-white rounded-lg transition-all duration-300 text-xs font-semibold flex items-center justify-center gap-2">
+                                    View Details
+                                    <span class="material-icons text-xs">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group flex flex-col">
+                        <div class="relative overflow-hidden h-32 w-full bg-gray-200 dark:bg-gray-800">
+                            <img alt="Social Media Analytics"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="https://i.ibb.co.com/zWPG6jNf/image.png" />
+                            <div
+                                class="absolute inset-0 bg-secondary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 backdrop-blur-sm">
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://github.com/esaruhulla1/lernify-app-client" title="View Code">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://lernify-app-client.vercel.app" title="Live Demo">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-3 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3
+                                    class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                                    Online Course Management</h3>
+                            </div>
+                            <p class="text-text-light dark:text-gray-400 text-xs mb-3 line-clamp-2">
+                                Learnify is a user-friendly and intuitive learning management app where users can
+                                change, manage, and learn. The app features a dynamic network system, authentication,
+                                responsive UI, and a smooth user experience—which is convenient for both students and
+                                instructors.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">Next.js</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">Tailwind</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">DaisyUI</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">JavaScript</span>
+                                </div>
+                                <a href="https://lernify-app-client.vercel.app"
+                                    class="w-full py-1.5 px-3 border border-primary/20 bg-primary/5 text-primary hover:bg-primary hover:text-white rounded-lg transition-all duration-300 text-xs font-semibold flex items-center justify-center gap-2">
+                                    View Details
+                                    <span class="material-icons text-xs">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group flex flex-col">
+                        <div class="relative overflow-hidden h-32 w-full bg-gray-200 dark:bg-gray-800">
+                            <img alt="Travel Booking Site"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="https://i.ibb.co.com/TBVg9WXB/image.png" />
+                            <div
+                                class="absolute inset-0 bg-secondary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 backdrop-blur-sm">
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://github.com/esaruhulla1/B12-A09-ToyLand?tab=readme-ov-file"
+                                    title="View Code">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://home-shef-client.netlify.app" title="Live Demo">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-3 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3
+                                    class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                                    Baby Toy Platform</h3>
+                            </div>
+                            <p class="text-text-light dark:text-gray-400 text-xs mb-3 line-clamp-2">
+                                A fun and colorful online marketplace designed just for kids’ toys! Families can explore
+                                a wide range of playful items from local toy sellers, discover unique finds, and share
+                                their experiences. Users can log in to browse toys, see detailed product information,
+                                and leave reviews or ratings to help others choose the perfect toys for their little
+                                ones.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">React.js</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">Tailwind
+                                        Css</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">JavaScript</span>
+                                </div>
+                                <a href="https://b12-a09-toyland.netlify.app"
+                                    class="w-full py-1.5 px-3 border border-primary/20 bg-primary/5 text-primary hover:bg-primary hover:text-white rounded-lg transition-all duration-300 text-xs font-semibold flex items-center justify-center gap-2">
+                                    View Details
+                                    <span class="material-icons text-xs">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group flex flex-col">
+                        <div class="relative overflow-hidden h-32 w-full bg-gray-200 dark:bg-gray-800">
+                            <img alt="Health Tracker App"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="https://i.ibb.co.com/WNwZCN8S/image.png" />
+                            <div
+                                class="absolute inset-0 bg-secondary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 backdrop-blur-sm">
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://github.com/esaruhulla1/B12-A08-Hero-Apps.git" title="View Code">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://b12-a08-hero-apps-by-esa.netlify.app/" title="Live Demo">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-3 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3
+                                    class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                                    Hero.io</h3>
+                            </div>
+                            <p class="text-text-light dark:text-gray-400 text-xs mb-3 line-clamp-2">
+                                Hero IO is a modern Mobile Apps Showcase Website built with React. It displays detailed
+                                information about various mobile apps, including their ratings, reviews, and download
+                                statistics in a visually appealing way. With React Router, navigation between pages is
+                                fast and seamless, ensuring a smooth user experience.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">Tailwind
+                                        Css</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">DaisyUI</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">Figma</span>
+                                </div>
+                                <a href="https://b12-a08-hero-apps-by-esa.netlify.app"
+                                    class="w-full py-1.5 px-3 border border-primary/20 bg-primary/5 text-primary hover:bg-primary hover:text-white rounded-lg transition-all duration-300 text-xs font-semibold flex items-center justify-center gap-2">
+                                    View Details
+                                    <span class="material-icons text-xs">arrow_forward</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-gray-900 rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 dark:border-gray-700 group flex flex-col">
+                        <div class="relative overflow-hidden h-32 w-full bg-gray-200 dark:bg-gray-800">
+                            <img alt="AI Finance Bot"
+                                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                                src="https://i.ibb.co.com/M05njLr/image.png" />
+                            <div
+                                class="absolute inset-0 bg-secondary/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-4 backdrop-blur-sm">
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://esaruhulla1.github.io/influencer-gear-website" title="View Code">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-secondary hover:text-primary transition-colors shadow-lg transform hover:scale-110"
+                                    href="https://home-shef-client.netlify.app" title="Live Demo">
+                                    <i class="fas fa-external-link-alt text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="p-3 flex flex-col flex-grow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3
+                                    class="text-lg font-bold text-secondary dark:text-white group-hover:text-primary transition-colors">
+                                    Influencer products</h3>
+                            </div>
+                            <p class="text-text-light dark:text-gray-400 text-xs mb-3 line-clamp-2">
+                                An Online Market Place that helps users buy
+                                Electronics product and providing Best Products.
+                            </p>
+                            <div class="mt-auto">
+                                <div class="flex flex-wrap gap-1.5 mb-4">
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">HTML
+                                        5</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">CSS</span>
+                                    <span
+                                        class="px-2 py-0.5 bg-gray-100 dark:bg-gray-800 text-[10px] font-medium text-secondary dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">JavaScript
+                                        ES6</span>
+                                </div>
+                                <button
+                                    class="w-full py-1.5 px-3 border border-primary/20 bg-primary/5 text-primary hover:bg-primary hover:text-white rounded-lg transition-all duration-300 text-xs font-semibold flex items-center justify-center gap-2">
+                                    View Details
+                                    <span class="material-icons text-xs">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <a class="inline-flex items-center gap-2 text-secondary dark:text-white font-semibold hover:text-primary dark:hover:text-primary transition-colors"
+                        href="https://github.com/esaruhulla1?tab=repositories">
+                        View All Projects <span class="material-icons">arrow_right_alt</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- What I Can Do For You -->
+        <section class="py-24 bg-white dark:bg-background-dark" id="services">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-4">What I Can Do For You
+                    </h2>
+                </div>
+                <style>
+                    .hide-scrollbar::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    .hide-scrollbar {
+                        -ms-overflow-style: none;
+                        scrollbar-width: none;
+                    }
+                </style>
+                <div class="flex items-center justify-center relative group  ">
+                    <button aria-label="Scroll Left"
+                        class="flex absolute left-0 z-20 w-12 h-12 rounded-full bg-primary hover:bg-green-600 text-white items-center justify-center shadow-lg transition-all duration-300 -ml-4 xl:-ml-12 opacity-80 hover:opacity-100 hover:scale-110 focus:outline-none cursor-pointer"
+                        onclick="document.getElementById('services-carousel').scrollBy({left: -350, behavior: 'smooth'})">
+                        <span class="material-icons text-2xl">chevron_left</span>
+                    </button>
+                    <div class="pt-10 flex overflow-x-auto gap-8 w-full pb-8 snap-x snap-mandatory scroll-smooth hide-scrollbar"
+                        id="services-carousel">
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] bg-white dark:bg-gray-800 p-8 pt-16 relative text-center group/card hover:shadow-lg transition-all duration-300 rounded-lg snap-center border border-transparent hover:border-primary/10">
+                            <div
+                                class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-900 z-10 group-hover/card:scale-110 transition-transform duration-300">
+                                <span class="material-icons text-white text-3xl">palette</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-4 mt-4">Web Design & UI/UX
+                            </h3>
+                            <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                Design responsive and user-friendly interfaces with a focus on user experience across
+                                web and mobile platforms.
+                            </p>
+
+                        </div>
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] bg-white dark:bg-gray-800 p-8 pt-16 relative text-center group/card hover:shadow-lg transition-all duration-300 rounded-lg snap-center border border-transparent hover:border-primary/10">
+                            <div
+                                class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-900 z-10 group-hover/card:scale-110 transition-transform duration-300">
+                                <span class="material-icons text-white text-3xl">wifi</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-4 mt-4">SEO Optimization</h3>
+                            <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                Optimize websites to improve search engine rankings, increase organic traffic, and
+                                enhance online visibility.
+                            </p>
+
+                        </div>
+
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] bg-white dark:bg-gray-800 p-8 pt-16 relative text-center group/card hover:shadow-lg transition-all duration-300 rounded-lg snap-center border border-transparent hover:border-primary/10">
+                            <div
+                                class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-900 z-10 group-hover/card:scale-110 transition-transform duration-300">
+                                <span class="material-icons text-white text-3xl">analytics</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-4 mt-4">Backend Development
+                            </h3>
+                            <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                Develop and maintain server-side applications, databases, and APIs, ensuring scalability
+                                and security.
+                            </p>
+
+                        </div>
+
+
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] bg-white dark:bg-gray-800 p-8 pt-16 relative text-center group/card hover:shadow-lg transition-all duration-300 rounded-lg snap-center border border-transparent hover:border-primary/10">
+
+                            <div
+                                class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-900 z-10 group-hover/card:scale-110 transition-transform duration-300">
+                                <span class="material-icons text-white text-3xl">verified</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-4 mt-4">API Integration</h3>
+                            <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                Integrate third-party APIs and extend functionality, automate processes, and enhance
+                                user experience.
+                            </p>
+
+                        </div>
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] bg-white dark:bg-gray-800 p-8 pt-16 relative text-center group/card hover:shadow-lg transition-all duration-300 rounded-lg snap-center border border-transparent hover:border-primary/10">
+                            <div
+                                class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-900 z-10 group-hover/card:scale-110 transition-transform duration-300">
+                                <span class="material-icons text-white text-3xl">palette</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-4 mt-4">Website Maintenance &
+                                Support</h3>
+                            <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                Provide ongoing website maintenance, troubleshooting, and support to ensure optimal
+                                performance, security, and smooth operation.
+                            </p>
+
+                        </div>
+                        <div
+                            class="min-w-full md:min-w-[calc(50%-1rem)] lg:min-w-[calc(33.333%-1.5rem)] bg-white dark:bg-gray-800 p-8 pt-16 relative text-center group/card hover:shadow-lg transition-all duration-300 rounded-lg snap-center border border-transparent hover:border-primary/10">
+                            <div
+                                class="absolute -top-10 left-1/2 transform -translate-x-1/2 w-20 h-20 bg-primary rounded-full flex items-center justify-center shadow-lg border-4 border-white dark:border-gray-900 z-10 group-hover/card:scale-110 transition-transform duration-300">
+                                <span class="material-icons text-white text-3xl">movie</span>
+                            </div>
+                            <h3 class="text-xl font-bold text-secondary dark:text-white mb-4 mt-4">E-commerce
+                                Development
+                            </h3>
+                            <p class="text-text-light dark:text-gray-400 text-sm leading-relaxed">
+                                Build secure and scalable e-commerce platforms with features like product management,
+                                payment integration....
+                            </p>
+
+                        </div>
+                    </div>
+                    <button aria-label="Scroll Right"
+                        class="flex absolute right-0 z-20 w-12 h-12 rounded-full bg-primary hover:bg-green-600 text-white items-center justify-center shadow-lg transition-all duration-300 -mr-4 xl:-mr-12 opacity-80 hover:opacity-100 hover:scale-110 focus:outline-none cursor-pointer"
+                        onclick="document.getElementById('services-carousel').scrollBy({left: 350, behavior: 'smooth'})">
+                        <span class="material-icons text-2xl">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="py-24 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800"
+            id="gallery">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-4">Memories &amp;
+                        Moments</h2>
+                    <p class="text-text-light dark:text-gray-400 text-lg">Snapshots from my journey, travels, and
+                        inspirations.</p>
+                </div>
+                <div
+                    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-[250px]">
+                    <div class="group relative sm:col-span-2 sm:row-span-2 overflow-hidden rounded-2xl cursor-pointer">
+                        <img alt="Workspace"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 scale-105 "
+                            src="https://i.ibb.co.com/XfMYkHx2/triangle-office1.jpg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span
+                                class="text-primary font-semibold text-sm mb-1 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Office
+                                Life</span>
+                            <h3
+                                class="text-white font-bold text-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">
+                                My Creative Space</h3>
+                        </div>
+                    </div>
+                    <div class="group relative sm:row-span-2 overflow-hidden rounded-2xl cursor-pointer">
+                        <img alt="Data Analytics"
+                            class="w-full h-full object-cover  transition-transform duration-700 group-hover:scale-110"
+                            src="https://i.ibb.co.com/hFcDpFYt/Fast-day-of-office1.jpg" />
+
+                        <!-- <img alt="Data Analytics"
+                            class="w-full h-full object-cover  transition-transform duration-700 group-hover:scale-110"
+                            src="https://i.ibb.co.com/gZgW345x/Fast-day-of-office1.jpg" /> -->
+                        <div
+                            class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center backdrop-blur-[2px]">
+                            <div
+                                class="bg-white/90 dark:bg-gray-900/90 p-4 rounded-full shadow-lg transform scale-50 group-hover:scale-100 transition-transform duration-300">
+                                <span class="material-icons text-primary text-2xl">fullscreen</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl cursor-pointer">
+                        <img alt="Coding"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://i.ibb.co.com/GQJz7rLn/my-img-pc.jpg" />
+                        <div
+                            class="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-90 transition-opacity duration-300 flex items-center justify-center p-4 text-center">
+                            <p class="text-white font-medium">Late Night Coding</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl cursor-pointer">
+                        <img alt="Conference"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://i.ibb.co.com/HL9kcHs0/IMG-20240611-WA0026.jpg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                            <p class="text-white text-sm font-medium">Institude Group</p>
+                        </div>
+                    </div>
+                    <div class="group relative sm:col-span-2 overflow-hidden rounded-2xl cursor-pointer">
+                        <img alt="New York City"
+                            class="w-full h-full object-top transition-transform duration-700 group-hover:scale-105 scale-110"
+                            src="https://i.ibb.co.com/5XCSJczp/dfd5.jpg" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <h3 class="text-white font-bold text-lg">Inspiration Trip</h3>
+                            <p class="text-gray-300 text-xs">Barguna Polytechnic Institude</p>
+                        </div>
+                    </div>
+                    <div class="group relative overflow-hidden rounded-2xl cursor-pointer">
+                        <img alt="Team"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://i.ibb.co.com/FqKzfcCw/group.png" />
+                        <!-- <img alt="Team"
+                            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM_mf9uEQsnt27WAl8_zouObWrfYDKXLnUdSwi9_wmqSQjdG6N6sbY0Zp52yQdBw1KoLijv5r9kqOZ5ABIlXsj4gGxHAsdPm82yodg1-w187r3HubabHkJqt5QwhbhDk8kg6-iYztGBgYccc5vCRZo5xUAABR3zQj1e30g_cuMqHgdqMlgswg2zJv6REMnx2OK6Sa8kE7JaPxXsd_OghtJzaf3nFYj2f3uLi_kse1LRTBXpNSNM-spasn6fCn3Qlj1-dVn_vqB1xfq" /> -->
+                        <div
+                            class="absolute inset-0 bg-secondary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="text-white font-semibold tracking-wider uppercase text-sm">Our Team</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 text-center">
+                    <button
+                        class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-gray-200 dark:border-gray-700 text-secondary dark:text-gray-300 hover:bg-primary hover:text-white hover:border-primary transition-all duration-300 group">
+                        <span class="font-medium">View Instagram</span>
+                        <i class="fab fa-instagram text-lg group-hover:rotate-12 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Idea? -->
+        <section class="py-24 bg-[#111827] text-center" id="cta">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Do you have Project Idea?<br />Let's discuss
+                    your project!</h2>
+                <p class="text-gray-400 text-lg leading-relaxed mb-10 max-w-2xl mx-auto">
+                    There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                    alteration.
+                </p>
+                <a class="inline-flex items-center bg-primary/50 hover:bg-primary/30 text-white font-semibold py-3 px-8 rounded shadow-lg transition-all transform hover:-translate-y-1"
+                    href="#contact">
+                    Let's work Together
+                    <span class="material-icons ml-2 text-sm">arrow_forward</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact me -->
+        <section class="py-24 bg-gray-50/50 dark:bg-gray-800/30" id="contact">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-5xl font-bold text-secondary dark:text-white mb-4">Contact Me</h2>
+                    <p class="text-text-light dark:text-gray-400 text-lg">Let's get in touch</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+                    <div class="flex flex-col justify-center">
+                        <h3 class="text-2xl font-bold text-secondary dark:text-white mb-6">Don't be shy!</h3>
+                        <p class="text-text-light dark:text-gray-400 mb-10 text-lg leading-relaxed">
+                            Feel free to get in touch with me. I am always open to discussing new projects, creative
+                            ideas or opportunities to be part of your visions.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4 group">
+                                <div
+                                    class="flex-shrink-0 w-14 h-14 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-primary shadow-sm border border-gray-100 dark:border-gray-700 group-hover:border-primary transition-colors duration-300">
+                                    <span class="material-icons text-2xl">map</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-secondary dark:text-white mb-1">Address Point</h4>
+                                    <p class="text-text-light dark:text-gray-400">Dhaka, Bangladesh</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 group">
+                                <div
+                                    class="flex-shrink-0 w-14 h-14 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-primary shadow-sm border border-gray-100 dark:border-gray-700 group-hover:border-primary transition-colors duration-300">
+                                    <span class="material-icons text-2xl">email</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-secondary dark:text-white mb-1">Mail Me</h4>
+                                    <p class="text-text-light dark:text-gray-400">esaruhulla01@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 group">
+                                <div
+                                    class="flex-shrink-0 w-14 h-14 bg-white dark:bg-gray-800 rounded-lg flex items-center justify-center text-primary shadow-sm border border-gray-100 dark:border-gray-700 group-hover:border-primary transition-colors duration-300">
+                                    <span class="material-icons text-2xl">call</span>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-secondary dark:text-white mb-1">Call Me</h4>
+                                    <p class="text-text-light dark:text-gray-400">+880 1937826002</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <div class="flex space-x-4">
+                                <a class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-secondary dark:text-gray-300 hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:border-primary transition-all duration-300"
+                                    href=" https://www.linkedin.com/in/esaruhulla ">
+                                    <i class="fab fa-linkedin-in text-sm"></i>
+                                </a>
+                                <a class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-secondary dark:text-gray-300 hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:border-primary transition-all duration-300"
+                                    href="https://github.com/esaruhulla1">
+                                    <i class="fab fa-github text-sm"></i>
+                                </a>
+                                <a class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-secondary dark:text-gray-300 hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:border-primary transition-all duration-300"
+                                    href="https://www.instagram.com/esasagor?igsh=MW5obmNuanR4aXNsag==">
+                                    <i class="fab fa-instagram text-sm"></i>
+                                </a>
+
+                                <a class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-secondary dark:text-gray-300 hover:bg-primary hover:text-white hover:border-primary dark:hover:bg-primary dark:hover:border-primary transition-all duration-300"
+                                    href="https://www.facebook.com/fbesasagor">
+                                    <i class="fab fa-facebook-f text-sm"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-background-dark rounded-2xl p-8 md:p-10 shadow-lg border border-gray-100 dark:border-gray-700 relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-8 -mt-8 z-0 pointer-events-none">
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold text-secondary dark:text-white mb-6">Send Me a Message</h3>
+                            <form class="space-y-5">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                    <div class="relative">
+                                        <input
+                                            class="w-full pl-4 pr-4 py-3 bg-gray-50 dark:bg-gray-800 border-none rounded-lg focus:ring-2 focus:ring-primary text-secondary dark:text-white placeholder-gray-400 transition-all"
+                                            placeholder="Name" type="text" />
+                                    </div>
+                                    <div class="relative">
+                                        <input
+                                            class="w-full pl-4 pr-4 py-3 bg-gray-50 dark:bg-gray-800 border-none rounded-lg focus:ring-2 focus:ring-primary text-secondary dark:text-white placeholder-gray-400 transition-all"
+                                            placeholder="Email" type="email" />
+                                    </div>
+                                </div>
+                                <div class="relative">
+                                    <input
+                                        class="w-full pl-4 pr-4 py-3 bg-gray-50 dark:bg-gray-800 border-none rounded-lg focus:ring-2 focus:ring-primary text-secondary dark:text-white placeholder-gray-400 transition-all"
+                                        placeholder="Subject" type="text" />
+                                </div>
+                                <div class="relative">
+                                    <textarea
+                                        class="w-full pl-4 pr-4 py-3 bg-gray-50 dark:bg-gray-800 border-none rounded-lg focus:ring-2 focus:ring-primary text-secondary dark:text-white placeholder-gray-400 transition-all resize-none"
+                                        placeholder="Message" rows="4"></textarea>
+                                </div>
+                                <button
+                                    class="w-full md:w-auto bg-primary hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 mt-2">
+                                    Send Message
+                                    <span class="material-icons text-sm">send</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div
+                    class="mt-16 w-full h-[400px] rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700 relative z-10 group">
+                    <iframe allowfullscreen=""
+                        class="w-full h-full filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-700"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116834.00977793465!2d90.34928583488732!3d23.780777744365775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c76eb95bda8b%3A0x62a5b67e0e27104b!2sMirpur%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1716382900000!5m2!1sen!2sbd"
+                        style="border:0;"></iframe>
+                </div> -->
+
+                <div
+                    class="mt-16 w-full h-[400px] rounded-2xl overflow-hidden shadow-lg border border-gray-100 dark:border-gray-700 relative z-10 group">
+                    <iframe allowfullscreen=""
+                        class="w-full h-full filter grayscale-[30%] group-hover:grayscale-0 transition-all duration-700"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233667.8223924372!2d90.27923775747219!3d23.780887456212758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1716462700000!5m2!1sen!2sbd"
+                        style="border:0;"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer
+        class="bg-secondary dark:bg-background-dark pt-16 pb-8 border-t border-gray-700/20 dark:border-gray-800 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex flex-col items-center">
+                <a class="text-3xl font-bold text-white mb-6 tracking-tight" href="#">Nick Berg</a>
+                <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-8">
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium" href="#">Home</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium"
+                        href="#about">About</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium"
+                        href="#skills">Skills</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium"
+                        href="#education-experience">Experiences</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium"
+                        href="#portfolio">Portfolio</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium"
+                        href="#gallery">Gallery</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium"
+                        href="#gallery">Blog</a>
+                    <a class="text-gray-300 hover:text-primary transition-colors text-sm font-medium"
+                        href="#contact">Contact</a>
+                </nav>
+                <div class="flex space-x-5 mb-8">
+                    <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-all duration-300 group"
+                        href="https://www.facebook.com/fbesasagor">
+                        <i class="fab fa-facebook-f text-sm group-hover:scale-110 transition-transform"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-all duration-300 group"
+                        href="https://www.instagram.com/esasagor?igsh=MW5obmNuanR4aXNsag==">
+                        <i class="fab fa-instagram text-sm group-hover:scale-110 transition-transform"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-all duration-300 group"
+                        href="https://github.com/esaruhulla1">
+                        <i class="fab fa-github text-sm group-hover:scale-110 transition-transform"></i>
+                    </a>
+                    <a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-primary hover:text-white transition-all duration-300 group"
+                        href=" https://www.linkedin.com/in/esaruhulla ">
+                        <i class="fab fa-linkedin-in text-sm group-hover:scale-110 transition-transform"></i>
+                    </a>
+
+
+                </div>
+                <div class="text-center border-t border-gray-700/50 w-full pt-8">
+                    <p class="text-gray-400 text-sm">
+                        © 2024 Nick Berg. All rights reserved.
+                    </p>
+                </div>
+            </div>
+            <a aria-label="Back to top"
+                class="hidden md:flex absolute right-6 lg:right-8 top-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-secondary/80 dark:bg-gray-800/80 border border-white/10 backdrop-blur-sm items-center justify-center text-white shadow-lg hover:bg-primary hover:border-primary hover:shadow-[0_0_20px_rgba(46,204,113,0.4)] hover:-translate-y-1 transition-all duration-300 group z-10"
+                href="#">
+                <span
+                    class="material-icons text-3xl group-hover:-translate-y-0.5 transition-transform">keyboard_arrow_up</span>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Light/dark mode-->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button
+            class="bg-secondary dark:bg-white text-white dark:text-secondary p-3 rounded-full shadow-lg hover:scale-110 transition-transform focus:outline-none"
+            id="theme-toggle">
+            <span class="material-icons block dark:hidden">dark_mode</span>
+            <span class="material-icons hidden dark:block">light_mode</span>
+        </button>
+    </div>
+
+
+    <script>
+        // Simple Dark Mode Toggle Logic
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        // Check local storage or system preference on load
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        themeToggleBtn.addEventListener('click', function () {
+            // if set via local storage previously
+            if (localStorage.theme === 'dark') {
+                localStorage.theme = 'light';
+                document.documentElement.classList.remove('dark');
+            } else {
+                localStorage.theme = 'dark';
+                document.documentElement.classList.add('dark');
+            }
+        });
+    </script>
+</body>
+
+</html>
